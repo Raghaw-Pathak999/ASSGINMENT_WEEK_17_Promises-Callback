@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error message on the webpage.</title>
+</head>
+<body>
+    WEB-PAGE
+</body>
+<script>
+     fetch('https://jsonplaceholder.typicode.com/posts/123456789')
+    .then((Response)=>{if(!Response.ok){
+        throw new Error("Network Response was not ok")
+    }
+    return Response.json()
+    })
+    .then((DATA)=>{
+        console.log(DATA);})
+    .catch((error)=>{
+        console.error("helo 999", error.message);
+    })
+</script>
+</html>
